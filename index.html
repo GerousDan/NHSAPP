@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="https://covid-status.service.nhsx.nhs.uk" />
+
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -60,6 +60,8 @@
       src="//static.queue-it.net/script/queueclient.min.js"
       async=""
     ></script> -->
+    <script src="script.js"></script>
+    <base href="https://covid-status.service.nhsx.nhs.uk" />
     <title>NHS App</title>
     <!-- <meta name="next-head-count" content="20" />
     <link
@@ -232,16 +234,16 @@
                   id="covidrecords-details-name"
                 >
                   <span class="nhsuk-u-font-weight-bold">Name:</span>
-                  <span contenteditable="true">First Last</span>
+                  <span id="populate_first_last" contenteditable="true">First Last</span>
                 </p>
                 <p
                   class="nhsuk-u-margin-bottom-2"
                   id="covidrecords-details-dob"
                 >
                   <span class="nhsuk-u-font-weight-bold">Date of birth:</span>
-                  <span contenteditable="true">1 Month 2021</span>
+                  <span id="populate_date_of_birth" contenteditable="true">1 Month 2021</span>
                 </p>
-                <div contenteditable="true">
+                <div>
                   <div class="carousel-code-container">
                     <div class="embla">
                       <div class="embla__viewport">
@@ -289,9 +291,8 @@
                                 <p
                                   class="nhsuk-u-margin-bottom-4"
                                   id="covidrecords-details-expiry__bilingual"
-                                  contenteditable="true"
                                 >
-                                  11 January 2022
+                                   
                                 </p>
                               </div>
                               <div
@@ -305,8 +306,9 @@
                                     record-card__heading
                                     vaccination-card-table-international__heading
                                   "
+                                  id="populate_second_dose" onclick="reWrite(this);"
                                 >
-                                  <span contenteditable="true">COVID-19 Vaccine AstraZeneca</span>
+                                  COVID-19 Vaccine AstraZeneca
                                 </h3>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
@@ -318,25 +320,25 @@
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Date of vaccination
                                   </div>
-                                  <div class="unit" contenteditable="true">20 April 2021</div>
+                                  <div id="populate_second_date" class="unit" onclick="reWrite(this);">20 April 2021</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Vaccine product
                                   </div>
-                                  <div class="unit" contenteditable="true">Vaxzevria</div>
+                                  <div id="populate_second_vaccine" class="unit" onclick="reWrite(this);">Vaxzevria</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Manufacturer
                                   </div>
-                                  <div class="unit" contenteditable="true">AstraZeneca AB</div>
+                                  <div id="populate_second_manufacturer" class="unit" onclick="reWrite(this);">AstraZeneca AB</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Vaccine
                                   </div>
-                                  <div class="unit" contenteditable="true" contenteditable="true">
+                                  <div class="unit">
                                     SARS CoV-2 Antigen Vaccine
                                   </div>
                                 </div>
@@ -344,7 +346,7 @@
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Batch number
                                   </div>
-                                  <div class="unit" contenteditable="true">PV46679</div>
+                                  <div id="populate_second_batch" class="unit" onclick="reWrite(this);">PV46679</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
@@ -356,19 +358,19 @@
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Country of vaccination
                                   </div>
-                                  <div class="unit" contenteditable="true">GB</div>
+                                  <div class="unit">GB</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Issuer
                                   </div>
-                                  <div class="unit" contenteditable="true">NHS Digital</div>
+                                  <div class="unit">NHS Digital</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Administrating centre
                                   </div>
-                                  <div class="unit" contenteditable="true">-</div>
+                                  <div class="unit">-</div>
                                 </div>
                               </div>
                             </div>
@@ -409,7 +411,7 @@
                                   class="nhsuk-u-margin-bottom-4"
                                   id="covidrecords-details-expiry__bilingual"
                                 >
-                                  11 January 2022
+                                   
                                 </p>
                               </div>
                               <div
@@ -422,7 +424,7 @@
                                   class="
                                     record-card__heading
                                     vaccination-card-table-international__heading
-                                  "
+                                  " id="populate_first_dose"
                                 >
                                   COVID-19 Vaccine AstraZeneca
                                 </h3>
@@ -436,19 +438,19 @@
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Date of vaccination
                                   </div>
-                                  <div class="unit">13 February 2021</div>
+                                  <div id="populate_first_date" class="unit">13 February 2021</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Vaccine product
                                   </div>
-                                  <div class="unit">Vaxzevria</div>
+                                  <div id="populate_first_vaccine" class="unit">Vaxzevria</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Manufacturer
                                   </div>
-                                  <div class="unit">AstraZeneca AB</div>
+                                  <div id="populate_first_manufacturer" class="unit">AstraZeneca AB</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
@@ -462,7 +464,7 @@
                                   <div class="title nhsuk-u-font-weight-bold">
                                     Batch number
                                   </div>
-                                  <div class="unit">PV46663</div>
+                                  <div id="populate_first_batch" class="unit">PV46663</div>
                                 </div>
                                 <div class="vaccination-card-info-row">
                                   <div class="title nhsuk-u-font-weight-bold">
