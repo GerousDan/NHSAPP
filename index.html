@@ -11,6 +11,7 @@
     <meta name="author" content="NHS" />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <link rel="shortcut icon" type="image/icon" href="/favicon-shortcut.ico" /> -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="icon.png" />
     <!--     <link
       rel="apple-touch-icon"
@@ -143,7 +144,7 @@
       as="script"
     /> -->
   </head>
-  <body>
+  <body spellcheck=false>
     <!-- <div id="__next"> -->
     <header class="nhsuk-header nhsuk-header--transactional" role="banner">
       <div
@@ -153,13 +154,14 @@
           header-custom-container
         "
       >
-        <div class="header-custom-title-container">
+        <!-- <div class="header-custom-title-container"> -->
+        <div style="display: flex; justify-content: center">
           <div class="nhsuk-header__logo nhsuk-header__logo--only">
-            <a
+            <!-- <a
               class="nhsuk-header__link nhsuk-header__link--service"
               href="/"
               aria-label="NHS logo back to start link"
-            >
+            > -->
               <svg
                 class="nhsuk-logo"
                 xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +180,7 @@
                   href=""
                 ></image>
               </svg>
-            </a>
+            <!-- </a> -->
           </div>
           <!-- <div class="nhsuk-header__transactional-service-name">
             <a class="nhsuk-header__transactional-service-name--link" href="/"
@@ -239,7 +241,7 @@
                   <span class="nhsuk-u-font-weight-bold">Date of birth:</span>
                   <span contenteditable="true">1 Month 2021</span>
                 </p>
-                <div>
+                <div contenteditable="true">
                   <div class="carousel-code-container">
                     <div class="embla">
                       <div class="embla__viewport">
