@@ -2,7 +2,7 @@ window.onload = function () {
     expiryDate();
 }
 
-function nextMonthDate() {
+function expiryDate() {
     const months = [
         "January",
         "February",
@@ -20,17 +20,9 @@ function nextMonthDate() {
     var date = new Date();
     date.setDate(date.getDate()-1);
     date = date.addMonths(1);
-    return (
-        date.getDate().toString() +
-        " " +
-        months[date.getMonth()] +
-        " " +
-        date.getFullYear()
-    );
-}
-  
-function expiryDate() {
-    document.getElementById("covidrecords-details-expiry__bilingual").innerText = nextMonthDate();
+    document.getElementById("covidrecords-details-expiry__bilingual").innerText = 
+        date.getDate().toString() + " " + months[date.getMonth()] + " " + date.getFullYear();
+        
 }
 
 Date.isLeapYear = function (year) { 
